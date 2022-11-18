@@ -1,18 +1,29 @@
-const Card = () => {
+export const Card = ({ description, value, type, children }) => {
+  const typeVerify = type === "entrada";
   return (
     <li className="entryCard">
-      <div className="colorDiv"></div>
+      {typeVerify ? (
+        <div className="greenDiv"></div>
+      ) : (
+        <div className="redDiv"></div>
+      )}
+
       <div className="cardInfo">
         <div>
-          <h2 className="entryTitle"></h2>
+          <h2 className="entryTitle">{description}</h2>
           <div className="rightDiv">
-            <span className="entryValue">R$ 5.000,00</span>
+            <span className="entryValue">{value}</span>
             <button className="removeEntryBtn">
               <img src="../../src/assets/trash.svg" alt="" />
             </button>
           </div>
         </div>
-        <span className="entryType">Entrada</span>
+
+        {typeVerify ? (
+          <span className="entryType">Entrada</span>
+        ) : (
+          <span className="entryType">Saída</span>
+        )}
       </div>
     </li>
   );
