@@ -1,4 +1,4 @@
-const TotalMoney = () => {
+export const TotalMoney = () => {
   return (
     <div id="totalMoneyDiv">
       <div>

@@ -1,25 +1,33 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Header';
-import Form from './components/Form';
+import { useState } from "react";
+import Header from "./components/Header";
+import Form from "./components/Form";
+import { Button } from "./components/Button";
+import { TotalMoney } from "./components/TotalMoney";
+import { List } from "./components/List";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const userObj = {
+
+    
+
+  }
 
   return (
     <div className="App">
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-
       <Header></Header>
+      <div className="divContainer">
+        <div id="left">
+          <Form></Form>
+          <TotalMoney></TotalMoney>
+        </div>
 
-      <Form></Form>
-
+        <div id="right">
+          <Button></Button>
+          <List></List>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

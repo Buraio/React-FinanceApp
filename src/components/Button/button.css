@@ -1,0 +1,10 @@
+#listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#filterDiv {
+  display: flex;
+  gap: 16px;
+}
