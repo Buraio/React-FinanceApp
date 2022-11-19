@@ -1,4 +1,10 @@
-export const Card = ({ description, value, type, children }) => {
+export const Card = ({ setCards, description, value, type, children }) => {
+  const removeEntry = () => {
+
+    
+
+  };
+
   const typeVerify = type === "entrada";
   return (
     <li className="entryCard">

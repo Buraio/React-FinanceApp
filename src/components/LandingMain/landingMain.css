@@ -1,0 +1,30 @@
+body {
+  background-color: var(--gray-4);
+  color: var(--gray-1);
+}
+
+.landingMain {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftCont {
+  width: 25%;
+}
+
+.mainTitle {
+  max-width: 350px;
+  font-size: 38px;
+}
+
+.mainTitle,
+.leftCont > p,
+.goToHome {
+  margin-top: 28px;
+}
+
+.goToHome {
+  max-width: 250px;
+}
