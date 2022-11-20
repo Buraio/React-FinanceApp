@@ -1,0 +1,10 @@
+#listHeader {
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+#listHeader > span {
+  font-size: 20px;
+}

@@ -1,17 +1,18 @@
-body {
-  background-color: var(--gray-4);
-  color: var(--gray-1);
-}
-
 .landingMain {
   height: 100vh;
+  padding: 0 15px;
+  color: var(--gray-1);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .leftCont {
-  width: 25%;
+  width: 100%;
+}
+
+.rightCont > img {
+  display: none;
 }
 
 .mainTitle {
@@ -23,8 +24,4 @@ body {
 .leftCont > p,
 .goToHome {
   margin-top: 28px;
-}
-
-.goToHome {
-  max-width: 250px;
 }

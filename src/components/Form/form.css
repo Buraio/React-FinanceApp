@@ -1,3 +1,23 @@
 .formContainer {
-  max-width: 350px;
+  padding: 38px 25px;
+  border: 1px solid var(--gray-2);
+  border-radius: 4px;
+}
+
+small {
+  color: var(--gray-3);
+}
+
+.styleInput {
+  display: flex;
+  gap: 36px;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+label {
+  margin: 17px 0;
+  font-size: 14px;
 }

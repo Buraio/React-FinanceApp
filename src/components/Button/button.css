@@ -8,3 +8,18 @@
   display: flex;
   gap: 16px;
 }
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.inputData {
+  width: 100%;
+  max-width: none;
+  display: block;
+}
+
+label {
+  width: 100%;
+  max-width: 50%;
+}

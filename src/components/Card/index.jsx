@@ -1,8 +1,14 @@
-export const Card = ({ setCards, description, value, type, children }) => {
-  const removeEntry = () => {
+export const Card = ({ setCards, setTotalValue, description, value, type }) => {
+  const removeEntry = (cardDesc) => {
+    setCards((oldCards) => {
+      const currentCards = oldCards.filter(
+        (card) => card.description !== cardDesc
+      );
+      console.log(currentCards);
+      return [...currentCards];
+    });
 
-    
-
+    setTotalValue((oldValue) => oldValue - value);
   };
 
   const typeVerify = type === "entrada";
@@ -18,8 +24,11 @@ export const Card = ({ setCards, description, value, type, children }) => {
         <div>
           <h2 className="entryTitle">{description}</h2>
           <div className="rightDiv">
-            <span className="entryValue">{value}</span>
-            <button className="removeEntryBtn">
+            <span className="entryValue">R$ {value}</span>
+            <button
+              className="removeEntryBtn"
+              onClick={() => removeEntry(description)}
+            >
               <img src="../../src/assets/trash.svg" alt="" />
             </button>
           </div>
