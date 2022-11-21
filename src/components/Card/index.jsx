@@ -1,19 +1,57 @@
-const Card = () => {
+import "./card.css";
+
+const Card = ({
+  setCards,
+  setTotalValue,
+  setLength,
+  description,
+  value,
+  type,
+}) => {
+  const removeEntry = (cardDesc) => {
+    setCards((oldCards) => {
+      const currentCards = oldCards.filter(
+        (card) => card.description !== cardDesc
+      );
+      console.log(currentCards);
+      return [...currentCards];
+    });
+
+    setTotalValue((oldValue) => oldValue - value);
+    setLength((oldLength) => oldLength - 1);
+  };
+
+  const typeVerify = type === "entrada";
   return (
     <li className="entryCard">
-      <div className="colorDiv"></div>
+      {typeVerify ? (
+        <div className="greenDiv"></div>
+      ) : (
+        <div className="redDiv"></div>
+      )}
+
       <div className="cardInfo">
         <div>
-          <h2 className="entryTitle"></h2>
+          <h2 className="entryTitle">{description}</h2>
           <div className="rightDiv">
-            <span className="entryValue">R$ 5.000,00</span>
-            <button className="removeEntryBtn">
+            <span className="entryValue">R$ {value}</span>
+            <button
+              className="removeEntryBtn"
+              onClick={() => removeEntry(description)}
+            >
               <img src="../../src/assets/trash.svg" alt="" />
             </button>
           </div>
         </div>
-        <span className="entryType">Entrada</span>
+
+        {typeVerify ? (
+          <span className="entryType">Entrada</span>
+        ) : (
+          <span className="entryType">Despesa</span>
+        )}
       </div>
     </li>
   );
 };
+
+export default Card;

@@ -1,0 +1,41 @@
+@media (min-width: 500px) {
+  .leftCont {
+    max-width: 375px;
+  }
+}
+
+@media (min-width: 900px) {
+  .rightCont {
+    width: 50%;
+    max-width: 500px;
+  }
+
+  .rightCont > img {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .goToHome {
+    max-width: 250px;
+  }
+}
+
+@media (min-height: 320px) {
+  .rightCont {
+    max-width: 380px;
+  }
+
+  .mainTitle,
+  .leftCont > p,
+  .goToHome {
+    margin-top: 5px;
+  }
+}
+
+@media (min-height: 400px) {
+  .mainTitle,
+  .leftCont > p,
+  .goToHome {
+    margin-top: 28px;
+  }
+}

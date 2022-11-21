@@ -1,25 +1,19 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Header';
-import Form from './components/Form';
+import { useState } from "react";
+import LandingPage from "./pages/landingPage";
+import HomePage from "./pages/homePage";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLogged, setLogin] = useState(false);
 
   return (
     <div className="App">
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-
-      <Header></Header>
-
-      <Form></Form>
-
+      {isLogged ? (
+        <HomePage setLogin={setLogin}></HomePage>
+      ) : (
+        <LandingPage setLogin={setLogin}></LandingPage>
+      )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
