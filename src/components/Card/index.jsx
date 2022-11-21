@@ -38,7 +38,7 @@ const Card = ({
               className="removeEntryBtn"
               onClick={() => removeEntry(description)}
             >
-              <img src={require("/src/assets/trash.svg")} alt="" />
+              <img src={"./src/assets/trash.svg"} alt="" />
             </button>
           </div>
         </div>
