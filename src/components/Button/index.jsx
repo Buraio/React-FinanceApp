@@ -1,10 +1,7 @@
 import "./button.css";
 
 export const Button = ({ setFilter }) => {
-  const filterEntries = (event) => {
-    console.log(event.target.value);
-    setFilter(event.target.value);
-  };
+  const filterEntries = (event) => setFilter(event.target.value);
 
   return (
     <div id="listHeader">

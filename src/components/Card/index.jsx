@@ -13,7 +13,6 @@ const Card = ({
       const currentCards = oldCards.filter(
         (card) => card.description !== cardDesc
       );
-      console.log(currentCards);
       return [...currentCards];
     });
 

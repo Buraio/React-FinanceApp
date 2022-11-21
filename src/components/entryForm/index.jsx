@@ -1,7 +1,7 @@
-import "./form.css";
+import "./entryForm.css";
 import { useState } from "react";
 
-const Form = ({ setCards, setTotalValue, setLength }) => {
+const EntryForm = ({ setCards, setTotalValue, setLength }) => {
   const [description, setDescription] = useState("");
   const [value, setValue] = useState("");
   const [type, setType] = useState("");
@@ -10,9 +10,7 @@ const Form = ({ setCards, setTotalValue, setLength }) => {
     event.preventDefault();
 
     const formElements = [...event.target.elements];
-    formElements.map(input => {
-      input.value = '';
-    })
+    formElements.map((input) => (input.value = ""));
 
     const cardObj = {
       description,
@@ -22,7 +20,7 @@ const Form = ({ setCards, setTotalValue, setLength }) => {
 
     setCards((oldCards) => [...oldCards, cardObj]);
     setTotalValue((oldValue) => oldValue + parseInt(cardObj.value));
-    setLength(oldLength => oldLength + 1);
+    setLength((oldLength) => oldLength + 1);
   };
 
   return (
@@ -66,7 +64,9 @@ const Form = ({ setCards, setTotalValue, setLength }) => {
               setType(event.target.value);
             }}
           >
-            <option value="" disabled>Selecione</option>
+            <option value="" disabled>
+              Selecione
+            </option>
             <option value="entrada">Entrada</option>
             <option value="despesa">Despesa</option>
           </select>
@@ -79,4 +79,4 @@ const Form = ({ setCards, setTotalValue, setLength }) => {
   );
 };
 
-export default Form;
+export default EntryForm;
