@@ -4,20 +4,25 @@ import { useState } from "react";
 const Form = ({ setCards, setTotalValue, setLength }) => {
   const [description, setDescription] = useState("");
   const [value, setValue] = useState("");
-  const [typeSelect, setType] = useState("");
+  const [type, setType] = useState("");
 
   const getFormData = (event) => {
     event.preventDefault();
 
+    const formElements = [...event.target.elements];
+    formElements.map(input => {
+      input.value = '';
+    })
+
     const cardObj = {
       description,
       value,
-      typeSelect,
+      type,
     };
 
     setCards((oldCards) => [...oldCards, cardObj]);
-    setTotalValue(oldValue => oldValue + parseInt(cardObj.value));
-    // setLength(oldLength => oldLength + 1);
+    setTotalValue((oldValue) => oldValue + parseInt(cardObj.value));
+    setLength(oldLength => oldLength + 1);
   };
 
   return (
@@ -29,6 +34,7 @@ const Form = ({ setCards, setTotalValue, setLength }) => {
           className="inputData"
           type="text"
           placeholder="Digite aqui sua descrição"
+          required
           onChange={(event) => {
             setDescription(event.target.value);
           }}
@@ -43,23 +49,26 @@ const Form = ({ setCards, setTotalValue, setLength }) => {
             className="inputData"
             type="number"
             placeholder="R$"
+            required
             onChange={(event) => {
               setValue(event.target.value);
             }}
-            />
+          />
         </label>
         <label htmlFor="transactionType">
           Tipo de valor
           <select
             id="transactionType"
             className="inputData"
-            name=""
+            defaultValue=""
+            required
             onChange={(event) => {
               setType(event.target.value);
             }}
           >
+            <option value="" disabled>Selecione</option>
             <option value="entrada">Entrada</option>
-            <option value="saída">Saída</option>
+            <option value="despesa">Despesa</option>
           </select>
         </label>
       </div>

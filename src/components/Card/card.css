@@ -1,0 +1,7 @@
+.greenDiv {
+  background-color: var(--color-secondary);
+}
+
+.redDiv {
+  background-color: var(--color-primary);
+}

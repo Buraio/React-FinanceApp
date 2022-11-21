@@ -1,4 +1,13 @@
-export const Card = ({ setCards, setTotalValue, description, value, type }) => {
+import "./card.css";
+
+const Card = ({
+  setCards,
+  setTotalValue,
+  setLength,
+  description,
+  value,
+  type,
+}) => {
   const removeEntry = (cardDesc) => {
     setCards((oldCards) => {
       const currentCards = oldCards.filter(
@@ -9,6 +18,7 @@ export const Card = ({ setCards, setTotalValue, description, value, type }) => {
     });
 
     setTotalValue((oldValue) => oldValue - value);
+    setLength((oldLength) => oldLength - 1);
   };
 
   const typeVerify = type === "entrada";
@@ -37,9 +47,11 @@ export const Card = ({ setCards, setTotalValue, description, value, type }) => {
         {typeVerify ? (
           <span className="entryType">Entrada</span>
         ) : (
-          <span className="entryType">Saída</span>
+          <span className="entryType">Despesa</span>
         )}
       </div>
     </li>
   );
 };
+
+export default Card;
