@@ -1,4 +1,5 @@
 import "./card.css";
+import trashIcon from '../../assets/trash.svg';
 
 const Card = ({
   setCards,
@@ -38,7 +39,7 @@ const Card = ({
               className="removeEntryBtn"
               onClick={() => removeEntry(description)}
             >
-              <img src={"./src/assets/trash.svg"} alt="" />
+              <img src={trashIcon} alt="" />
             </button>
           </div>
         </div>
