@@ -1,0 +1,27 @@
+#totalMoneyDiv {
+  margin-top: 25px;
+  padding: 20px 24px;
+  border: 1px solid var(--gray-2);
+  border-radius: 4px;
+}
+
+#totalMoneyDiv > div {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#totalMoneyDiv > div > h2 {
+  font-size: 16px;
+  display: inline-block;
+}
+
+.value {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+#totalMoneyDiv > span {
+  color: var(--gray-3);
+  font-size: 12px;
+}
