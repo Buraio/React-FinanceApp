@@ -40,9 +40,9 @@ const HomePage = ({ setLogin }) => {
             {verifyCardArrayLength ? (
               <>
                 <h2>Você ainda não possui nenhum lançamento</h2>
-                <img src={"./src/assets/NoCard.svg"} alt="" />
-                <img src={"./src/assets/NoCard.svg"} alt="" />
-                <img src={"./src/assets/NoCard.svg"} alt="" />
+                <img className="noEntryImg" src={"./src/assets/NoCard.svg"} alt="" />
+                <img className="noEntryImg" src={"./src/assets/NoCard.svg"} alt="" />
+                <img className="noEntryImg" src={"./src/assets/NoCard.svg"} alt="" />
               </>
             ) : typeFilter === "true" ? (
               cardArray.map((card, index) => {

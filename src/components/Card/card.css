@@ -1,7 +1,66 @@
+.entryCard {
+  width: 100%;
+  margin: 20px 0;
+  height: 70px;
+  background-color: var(--gray-1);
+  display: flex;
+  border-radius: 4px;
+}
+
+.typeDiv {
+  width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.entryTitle {
+  font-size: 18px;
+}
+
+.entryType {
+  font-size: 14px;
+  color: var(--gray-3)
+}
+
+.entryValue {
+  font-size: 14px;
+  color: var(--gray-4)
+}
+
+.cardInfo {
+  width: 100%;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftDiv, .rightDiv {
+  width: 50%;
+}
+
+.rightDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.removeEntryBtn {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background-color: var(--gray-2);
+}
+
 .greenDiv {
   background-color: var(--color-secondary);
 }
 
-.redDiv {
-  background-color: var(--color-primary);
+.grayDiv {
+  background-color: var(--gray-2);
+}
+
+.noEntryImg {
+  width: 100%;
+  max-height: 70px;
+  margin: 5px 0;
+  object-fit:fill;
 }

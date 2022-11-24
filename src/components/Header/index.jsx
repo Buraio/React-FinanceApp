@@ -1,6 +1,6 @@
 import "../../styles/globalStyles.css";
 import "./header.css";
-import headerLogo from '../../assets/NuKenzie.svg'
+import headerLogo from "../../assets/NuKenzie.svg";
 
 const Header = ({ setLogin }) => {
   return (

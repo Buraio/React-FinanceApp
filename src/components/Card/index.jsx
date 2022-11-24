@@ -1,5 +1,5 @@
 import "./card.css";
-import trashIcon from '../../assets/trash.svg';
+import trashIcon from "../../assets/trash.svg";
 
 const Card = ({
   setCards,
@@ -25,14 +25,20 @@ const Card = ({
   return (
     <li className="entryCard">
       {typeVerify ? (
-        <div className="greenDiv"></div>
+        <div className="typeDiv greenDiv"></div>
       ) : (
-        <div className="redDiv"></div>
+        <div className="typeDiv grayDiv"></div>
       )}
 
       <div className="cardInfo">
-        <div>
+        <div className="leftDiv">
           <h2 className="entryTitle">{description}</h2>
+          {typeVerify ? (
+            <span className="entryType">Entrada</span>
+          ) : (
+            <span className="entryType">Despesa</span>
+          )}
+        </div>
           <div className="rightDiv">
             <span className="entryValue">R$ {value}</span>
             <button
@@ -42,13 +48,6 @@ const Card = ({
               <img src={trashIcon} alt="" />
             </button>
           </div>
-        </div>
-
-        {typeVerify ? (
-          <span className="entryType">Entrada</span>
-        ) : (
-          <span className="entryType">Despesa</span>
-        )}
       </div>
     </li>
   );

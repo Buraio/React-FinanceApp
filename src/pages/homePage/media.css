@@ -12,6 +12,10 @@
     flex-direction: row;
     align-items: center;
   }
+
+  .rightDiv {
+    max-width: 180px;
+  }
 }
 
 @media (min-width: 700px) {
@@ -22,6 +26,17 @@
   .homeHeader {
     padding: 0 100px;
     margin-bottom: 40px;
+  }
+
+  .cardInfo {
+    padding: 20px 20px;
+  }
+
+  .leftDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -39,6 +54,30 @@
 
   #listHeader {
     margin: 0;
+  }
+
+  .entryCard {
+    height: 80px;
+  }
+
+  .cardInfo {
+    padding: 15px;
+  }
+
+  .leftDiv {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .rightDiv {
+    max-width: 125px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .noEntryImg {
+    max-height: 80px;
   }
 }
 
