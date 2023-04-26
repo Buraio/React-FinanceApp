@@ -1,10 +1,15 @@
-import React from "react";
+import React, { StaticLifecycle } from "react";
 import "../../styles/globalStyles.css";
 import "./landingMain.css";
-import landingLogo from '../../assets/NuKenzieDark.svg';
-import landingImg from '../../assets/illustration.svg';
+import landingLogo from "../../assets/NuKenzieDark.svg";
+import landingImg from "../../assets/illustration.svg";
+import { tSetLogin } from "../../interfaces";
 
-const LandingMain = ({ setLogin }) => {
+export interface ILandingMainProps {
+  setLogin: tSetLogin;
+}
+
+const LandingMain = ({ setLogin }: ILandingMainProps) => {
   return (
     <>
       <div className="leftCont">

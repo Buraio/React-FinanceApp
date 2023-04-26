@@ -3,7 +3,11 @@ import LandingMain from "../../components/LandingMain";
 
 import "./media.css";
 
-function LandingPage({ setLogin }) {
+export interface IPageProps {
+  setLogin: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function LandingPage({ setLogin }: IPageProps) {
   return (
     <div className="landingCont">
       <main className="landingMain overflowY">

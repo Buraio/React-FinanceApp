@@ -1,5 +1,15 @@
 import "./card.css";
 import trashIcon from "../../assets/trash.svg";
+import { tSetCards, tSetLength, tSetTotalValue } from "../../interfaces";
+
+interface ICardProps {
+  setCards: tSetCards;
+  setTotalValue: tSetTotalValue;
+  setLength: tSetLength;
+  description: string;
+  value: number;
+  type: string;
+}
 
 const Card = ({
   setCards,
@@ -8,8 +18,8 @@ const Card = ({
   description,
   value,
   type,
-}) => {
-  const removeEntry = (cardDesc) => {
+}: ICardProps) => {
+  const removeEntry = (cardDesc: string) => {
     setCards((oldCards) => {
       const currentCards = oldCards.filter(
         (card) => card.description !== cardDesc
@@ -39,15 +49,15 @@ const Card = ({
             <span className="entryType">Despesa</span>
           )}
         </div>
-          <div className="rightDiv">
-            <span className="entryValue">R$ {value}</span>
-            <button
-              className="removeEntryBtn"
-              onClick={() => removeEntry(description)}
-            >
-              <img src={trashIcon} alt="" />
-            </button>
-          </div>
+        <div className="rightDiv">
+          <span className="entryValue">R$ {value}</span>
+          <button
+            className="removeEntryBtn"
+            onClick={() => removeEntry(description)}
+          >
+            <img src={trashIcon} alt="" />
+          </button>
+        </div>
       </div>
     </li>
   );
