@@ -1,6 +1,10 @@
 import "./totalMoney.css";
 
-export const TotalMoney = ({ totalValue }) => {
+interface ITotalMoneyProps {
+  totalValue: number
+}
+
+export const TotalMoney = ({ totalValue }: ITotalMoneyProps) => {
   return (
     <div id="totalMoneyDiv">
       <div>

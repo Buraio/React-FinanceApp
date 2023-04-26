@@ -1,7 +1,8 @@
+import { tSetFilter } from "../../interfaces";
 import "./button.css";
 
-export const Button = ({ setFilter }) => {
-  const filterEntries = (event) => setFilter(event.target.value);
+export const Button = ({ setFilter }: { setFilter: tSetFilter}): React.ReactNode => {
+  const filterEntries = (event: React.MouseEvent): void => setFilter(event.target?.value);
 
   return (
     <div id="listHeader">

@@ -1,8 +1,13 @@
 import "../../styles/globalStyles.css";
 import "./header.css";
 import headerLogo from "../../assets/NuKenzie.svg";
+import { tSetLogin } from "../../interfaces";
 
-const Header = ({ setLogin }) => {
+interface iHeaderProps {
+  setLogin: tSetLogin;
+}
+
+const Header = ({ setLogin }: iHeaderProps) => {
   return (
     <header className="homeHeader">
       <div>

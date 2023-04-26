@@ -8,14 +8,21 @@ import CardList from "../../components/CardList";
 import Card from "../../components/Card";
 
 import "./media.css";
+import { IPageProps } from "../landingPage";
 
-const HomePage = ({ setLogin }) => {
+interface ICard {
+  type: string;
+  description: string;
+  value: number
+}
+
+const HomePage = ({ setLogin }: IPageProps) => {
   const [cardArray, setCards] = useState([]);
   const [totalValue, setTotalValue] = useState(0);
   const [cardArrayLength, setLength] = useState(cardArray.length);
   const [typeFilter, setFilter] = useState("true");
   const verifyCardArrayLength = cardArrayLength === 0;
-  const filteredCardArray = cardArray.filter((card) => {
+  const filteredCardArray = cardArray.filter((card: { type: string}) => {
     if (typeFilter === card.type) {
       return card;
     }
@@ -40,12 +47,24 @@ const HomePage = ({ setLogin }) => {
             {verifyCardArrayLength ? (
               <>
                 <h2>Você ainda não possui nenhum lançamento</h2>
-                <img className="noEntryImg" src={"./src/assets/NoCard.svg"} alt="" />
-                <img className="noEntryImg" src={"./src/assets/NoCard.svg"} alt="" />
-                <img className="noEntryImg" src={"./src/assets/NoCard.svg"} alt="" />
+                <img
+                  className="noEntryImg"
+                  src={"./src/assets/NoCard.svg"}
+                  alt=""
+                />
+                <img
+                  className="noEntryImg"
+                  src={"./src/assets/NoCard.svg"}
+                  alt=""
+                />
+                <img
+                  className="noEntryImg"
+                  src={"./src/assets/NoCard.svg"}
+                  alt=""
+                />
               </>
             ) : typeFilter === "true" ? (
-              cardArray.map((card, index) => {
+              cardArray.map((card: ICard, index) => {
                 return (
                   <Card
                     key={index}
@@ -59,7 +78,7 @@ const HomePage = ({ setLogin }) => {
                 );
               })
             ) : (
-              filteredCardArray.map((card, index) => {
+              filteredCardArray.map((card: ICard, index) => {
                 return (
                   <Card
                     key={index}
