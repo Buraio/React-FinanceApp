@@ -1,26 +1,41 @@
+import { ICard, tSetCards, tSetLength, tSetTotalValue } from "../../interfaces";
 import "./entryForm.css";
-import { useState } from "react";
+import { FormEvent, ReactNode, SetStateAction, useState } from "react";
 
-const EntryForm = ({ setCards, setTotalValue, setLength }) => {
+interface IEntryFormProps {
+  setCards: tSetCards;
+  setTotalValue: tSetTotalValue;
+  setLength: tSetLength;
+}
+
+const EntryForm = ({ setCards, setTotalValue, setLength }: IEntryFormProps) => {
   const [description, setDescription] = useState("");
   const [value, setValue] = useState("");
   const [type, setType] = useState("");
 
-  const getFormData = (event) => {
+  const getFormData = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const formElements = [...event.target.elements];
-    formElements.map((input) => (input.value = ""));
+    const formTarget = event.currentTarget
+      .elements as HTMLFormControlsCollection;
 
-    const cardObj = {
-      description,
-      value,
-      type,
-    };
+    if (event.target) {
+      const formElements = [...formTarget];
+      formElements.map((input) => {
+        let inputValue = input.value;
+        inputValue = "";
+      });
 
-    setCards((oldCards) => [...oldCards, cardObj]);
-    setTotalValue((oldValue) => oldValue + parseInt(cardObj.value));
-    setLength((oldLength) => oldLength + 1);
+      const cardObj: ICard = {
+        description,
+        value,
+        type,
+      };
+
+      setCards((oldCards: ICard[]) => [...oldCards, cardObj]);
+      setTotalValue((oldValue) => oldValue + parseInt(cardObj.value));
+      setLength((oldLength) => oldLength + 1);
+    }
   };
 
   return (
